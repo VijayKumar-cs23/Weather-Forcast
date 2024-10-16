@@ -6,7 +6,7 @@
     padding: 0;
 }
 body{
-    background: url(photo-1728388939226-3fc095526a91.avif);
+    background: url(istockphoto-519320230-612x612.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     overflow: hidden;
@@ -38,4 +38,112 @@ body{
 }
 .place-container{
     text-align: end;
+}
+.place-container .time-zone{
+    font-size: 30px;
+    font-weight: 100;
+}
+.place-container .country{
+    font-size:15px;
+    font-weight:500;
+}
+.current-info .others{
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(12,15,34, 0.5);
+    border: 1px solid white;
+    padding:10px;
+    border-radius:10px;
+    margin:10px;
+
+}
+.current-info .others .weather-item{
+    display:flex;
+    justify-content: space-between;
+}
+.future-forcast{
+    background: rgba(12,15,34, 0.5);
+
+    padding:25px;
+    position:fixed;
+    bottom:0;
+    display:flex;
+    color:white;
+    width:100%;
+    align-items: center;
+    justify-content: center;
+}
+.future-forcast .today{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #eee;
+
+}
+.future-forcast .today .day{
+    padding: 5px 15px;
+    background:#3c3c44;
+    border-radius:50px;
+    text-align: center;
+}
+.future-forcast .today .temp{
+    font-size: 18px;
+    padding-top:15px;
+}
+.future-forcast .weather-forcast{
+    display:flex;
+   
+}
+.weather-forcast .weather-forcast-item{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+    margin: 0 10px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding:15px;
+}
+.weather-forcast .weather-forcast-item .day{
+    padding: 5px 15px;
+    background: #3c3c44;
+    border-radius:50px;
+    text-align: center;
+}
+.weather-forcast .weather-forcast-item .temp{
+    font-weight:100;
+}
+
+
+@media only screen and (max-width:730px){
+    .container{
+        padding: 20;
+    }
+    .future-forcast{
+        justify-content:start;
+        align-items: none;
+        overflow-y:scroll;
+    }
+    .future-forcast .today .temp{
+        font-size:23px;
+    }
+    .date-container .time{
+        font-size:50px;
+    }
+    .date-container #am-pm{
+        font-size:20px; 
+    }
+    .date-container .date{
+        font-size: 20px;
+    }
+    .place-container{
+        text-align: end;
+        margin-top: 15px;
+    }
+    .place-container .time-zone{
+        font-size: 20px;
+    }
+    .current-info .others .weather-item{
+        font-size:14px;
+    }
 }
