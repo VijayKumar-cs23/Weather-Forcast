@@ -28,5 +28,13 @@ setInterval(() => {
     
 }, 1000);
 
+getWeatherData()
+function getWeatherData () {
+    navigator.geolocation.getCurrentPositionI((success) => {
+        console.log(success);
+        let {latitude, longitude} = success.coords;
+        fetch('https://api.openweathermap.org/data/3.0/onecall?lat=${latitude}&lon=${longitude}&exclude=hourly,mintely&appid=${API_KEY}').then(res.json()).then(data =>{console.log(data)})
+    })
+}
 
 
