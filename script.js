@@ -29,12 +29,34 @@ setInterval(() => {
 }, 1000);
 
 getWeatherData()
-function getWeatherData () {
+function getWeatherData () { 
     navigator.geolocation.getCurrentPositionI((success) => {
         console.log(success);
         let {latitude, longitude} = success.coords;
-        fetch('https://api.openweathermap.org/data/3.0/onecall?lat=${latitude}&lon=${longitude}&exclude=hourly,mintely&appid=${API_KEY}').then(res.json()).then(data =>{console.log(data)})
+        fetch('https://api.openweathermap.org/data/3.0/onecall?lat=${latitude}&lon=${longitude}&exclude=hourly,mintely&units=metric&appid=${API_KEY}').then(res.json()).then(data =>{console.log(data)})
+        showWeatherData(data);
     })
+}
+
+function showWeatherData (data){
+     let {humidity, pressure, sunrise, sunset, wind_speed} = data.current;
+
+     currentWeatherItemsE1.innerHTML = 
+<div class="weather-item">
+    <div>Humidity</div>
+       <div>${humidity}</div>
+    </div>
+    <div class="weather-item">
+       <div>Pressure</div>
+       <div>${pressure}</div>
+    </div>
+    <div class="weather-item">
+       <div>Wind Speed</div>
+       <div>${wind_speed}</div>
+    </div>  
+
+    ;
+     
 }
 
 
